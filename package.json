@@ -1,0 +1,41 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "超级计算器",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "chcp 65001 && electron .",
+    "packagewin": "electron-packager ./ cals --platform=win32 --out=./dist --arch=x64 --app-version=1.0.1 --icon=./images/icon.ico --overwrite",
+    "buildmac": "electron-builder --platform=mac --arch=x64",
+    "buildwin": "electron-builder --platform=win --arch=x64"
+  },
+  "build": {
+    "appId": "com.mr.liu.calc.app",
+    "directories": {
+      "app": "./"
+    },
+    "productName": "超级计算器",
+    "dmg": {
+      "icon":"./images/mac.icns",
+      "window": {
+        "x": "200",
+        "y": "150",
+        "width": 500,
+        "height": 400
+      }
+    },
+    "mac": {"icon":"./images/mac.icns"},
+    "win": {"icon":"./images/icon.ico"}
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^13.1.7",
+    "mathjs": "^9.4.4"
+  },
+  "devDependencies": {
+    "electron-packager": "^15.3.0"
+  }
+}
